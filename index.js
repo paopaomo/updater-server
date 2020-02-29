@@ -10,7 +10,9 @@ app.use(serve({ rootDir: 'public', rootPath: '/public' }));
 app.use(updateRouter.routes());
 app.use(crashRouter.routes());
 
-app.listen(8888);
+app.listen(8888, () => {
+    console.log('server start at: http://127.0.0.1:8888');
+});
 
 
 
