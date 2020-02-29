@@ -1,9 +1,12 @@
 const Koa = require('koa');
+const bodyParser = require('koa-bodyparser');
 const serve = require('koa-static-server');
 const updateRouter = require('./router/update.route');
 const crashRouter = require('./router/crash.route');
 
 const app = new Koa();
+
+app.use(bodyParser());
 
 app.use(serve({ rootDir: 'public', rootPath: '/public' }));
 
