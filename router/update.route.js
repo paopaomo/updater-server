@@ -1,11 +1,11 @@
 const Router = require('koa-router');
 const router = new Router();
-const { getNewVersion } = require('../helper/version');
+const { getRemoteControlNewVersion } = require('../helper/version');
 
-router.get('/darwin', (ctx, next) => {
+router.get('/remote-control/releases/darwin', (ctx, next) => {
     // 处理mac更新, ?version=1.0.0&uid=123
     const { version } = ctx.query;
-    const newVersion = getNewVersion(version);
+    const newVersion = getRemoteControlNewVersion(version);
     if(newVersion) {
         ctx.body = newVersion;
     } else {

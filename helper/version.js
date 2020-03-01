@@ -1,7 +1,7 @@
 const compareVersions = require('compare-versions');
 
-// getNewVersion 一般会去做数据库的匹配
-const getNewVersion = (version) => {
+// getRemoteControlNewVersion 一般会去做数据库的匹配
+const getRemoteControlNewVersion = (version) => {
     if(!version) {
         return null;
     }
@@ -17,4 +17,4 @@ const getNewVersion = (version) => {
     return null;
 };
 
-module.exports = { getNewVersion };
+module.exports = { getRemoteControlNewVersion };
